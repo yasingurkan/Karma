@@ -6,4 +6,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="menekse">Menekşe</string>
+    <string name="aygul">Aygül</string>
+    <string name="yasin">Yasin</string>
+    <string name="title_activity_menekse">Menekse Activity</string>
+    <string name="title_activity_aygul">Aygul Activity</string>
+    <string name="title_activity_yasin">Yasin Activity</string>
 </resources>

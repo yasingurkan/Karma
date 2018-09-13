@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+public class AygulActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_aygul);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.aygul, menu);
         return true;
     }
 
@@ -95,19 +95,19 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_menekse)
         {
-            Intent intent = new Intent(MainActivity.this, MenekseActivity.class);
-            MainActivity.this.startActivity(intent);
+            Intent intent = new Intent(AygulActivity.this, MenekseActivity.class);
+            AygulActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_aygul)
         {
-            Toast.makeText(getApplicationContext(), "GALERY", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, AygulActivity.class);
-            MainActivity.this.startActivity(intent);
+           // Toast.makeText(getApplicationContext(), "GALERY", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(AygulActivity.this, AygulActivity.class);
+            AygulActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_yasin)
         {
-            Intent intent = new Intent(MainActivity.this, YasinActivity.class);
-            MainActivity.this.startActivity(intent);
+            Intent intent = new Intent(AygulActivity.this, YasinActivity.class);
+            AygulActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_share)
         {
