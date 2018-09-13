@@ -12,4 +12,6 @@
     <string name="title_activity_menekse">Menekse Activity</string>
     <string name="title_activity_aygul">Aygul Activity</string>
     <string name="title_activity_yasin">Yasin Activity</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
 </resources>
