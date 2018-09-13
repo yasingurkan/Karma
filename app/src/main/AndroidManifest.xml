@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenekseActivity"
+            android:name=".Activity.MenekseActivity"
             android:label="@string/title_activity_menekse"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -30,12 +30,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AygulActivity"
+            android:name=".Activity.AygulActivity"
             android:label="@string/title_activity_aygul"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".YasinActivity"
+            android:name=".Activity.YasinActivity"
             android:label="@string/title_activity_yasin"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
