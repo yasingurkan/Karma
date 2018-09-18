@@ -11,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.androidtools.karma.R;
 
+import com.example.androidtools.karma.Service.GPSTracker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -29,6 +32,8 @@ public class YasinFragment1 extends Fragment
 
     MapView mMapView;
     private GoogleMap googleMap;
+    GPSTracker gps;
+    
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -79,6 +84,30 @@ public class YasinFragment1 extends Fragment
                     return;
                 }
                 googleMap.setMyLocationEnabled(true);
+
+                /*
+                gps = new GPSTracker(getContext());
+
+                if(gps.canGetLocation()){
+
+                    double latitude = gps.getLatitude();
+                    double longitude = gps.getLongitude();
+
+                    // \n is for new line
+                    Toast.makeText(getContext(), "Your Location is - \nLat: "
+                            + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+
+                    LatLng myLocation = new LatLng(latitude, longitude);
+                    googleMap.addMarker(new MarkerOptions().position(myLocation).title("Konumum.."));
+
+                }else{
+                    // can't get location
+                    // GPS or Network is not enabled
+                    // Ask user to enable GPS/network in settings
+                    gps.showSettingsAlert();
+
+
+                }*/
             }
         });
 
