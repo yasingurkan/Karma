@@ -19,4 +19,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="yasin_mail">ygurkan@innova.com.tr</string>
     <string name="author">Yasin GÜRKAN</string>
+    <string name="ok">Tamam</string>
+    <string name="ok_location">Lütfen Konumu Açıp tekrar deneyin</string>
 </resources>

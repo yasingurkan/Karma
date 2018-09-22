@@ -1,7 +1,9 @@
 package com.example.androidtools.karma.Fragment;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -32,13 +34,22 @@ public class YasinFragment1 extends Fragment
 
     MapView mMapView;
     private GoogleMap googleMap;
-    GPSTracker gps;
+    GPSTracker gpsTracker;
     
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fragment_yasin1, container, false);
+
+        //****************************
+
+        gpsTracker = new GPSTracker(getActivity().getApplicationContext());
+        setLocationAddress();
+
+        //****************************
+
+
 
         mMapView = rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
@@ -112,6 +123,51 @@ public class YasinFragment1 extends Fragment
         });
 
         return rootView;
+    }
+
+    private void setLocationAddress() {
+
+        Toast.makeText(getActivity().getApplicationContext(), "LOCATION: "+gpsTracker.getLocation(), Toast.LENGTH_SHORT).show();
+
+        if (gpsTracker.getLocation() != null) {
+            if (gpsTracker.getLatitude() != 0 && gpsTracker.getLongitude() != 0) {
+                Toast.makeText(getActivity().getApplicationContext(), "Lat: "+gpsTracker.getLatitude()+ "Lon: "+gpsTracker.getLongitude(), Toast.LENGTH_SHORT).show();
+            } else {
+                buildAlertMessageNoGps();
+            }
+        } else {
+            buildAlertMessageNoGps();
+        }
+    }
+
+    private void buildAlertMessageNoGps() {
+        if (!(getActivity().isFinishing())) {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+            builder1.setMessage(getResources().getString(R.string.ok_location));
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    getResources().getString(R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            setLocationAddress();
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    android.R.string.cancel,
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            getActivity().finish();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+        }
+
     }
 
     @Override
